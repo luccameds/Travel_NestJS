@@ -1,0 +1,36 @@
+@ConfiguredDateTime = {{$datetime iso8601}}
+
+###
+GET http://localhost:3000/travel
+
+###
+POST http://localhost:3000/travel
+Content-Type: application/json
+
+{
+    "from_location": "Uberlândia-MG",
+    "to_location": "Uberaba-MG",
+    "driver": "Nome do motorista",
+    "driverId": "ID do motorista",
+    "startDate": "{{ConfiguredDateTime}}",
+    "endDate": "{{ConfiguredDateTime}}"
+}
+
+###
+GET http://localhost:3000/travel/1
+
+###
+PATCH http://localhost:3000/travel/3
+Content-Type: application/json
+
+{
+    "from_location": "Local de origem alterado",
+    "to_location": "Local de destino alterado",
+    "driver": "Nome de motorista alterado",
+    "driverId": "Id de motorista alterado",
+    "startDate": "{{ConfiguredDateTime}}",
+    "endDate": "{{ConfiguredDateTime}}"
+}
+
+###
+DELETE http://localhost:3000/travel/2
